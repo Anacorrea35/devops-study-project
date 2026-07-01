@@ -15,4 +15,3 @@ steps:
 
   - script: node app.js
     displayName: 'Executar aplicação'
-`
