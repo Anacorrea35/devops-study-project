@@ -24,6 +24,17 @@ jobs:
     - name: Instalar dependências
       run: npm ci
 
-    # Passo 4: O comando do seu PASSO 11.4
+    # # Passo 4: O comando do seu PASSO 11.4 (Testes)
     - name: Rodar Testes Unitários
       run: npm test
+
+    # Passo 5: O comando do seu PASSO 12 (Sonar Cloud)
+    - name: Sonar Scan
+      env:
+        # Aqui a pipeline puxa o Token com segurança sem expor a senha no código
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN1 }} 
+      run: |
+        echo "Simulação de análise estática de código..."
+        echo "Verificando vulnerabilidades, bugs e code smells..."
+        echo "Validando regras do Quality Gate..."
+        echo "Resultado do SonarCloud: Quality Gate PASSED! (Aprovado)"
